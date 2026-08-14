@@ -1,10 +1,10 @@
-# AQPO Evidence
+# QuantaLake AQPO
 
-[![Tests](https://github.com/darisisuresh/quantum-safe-metadata-aqpo-evidence/actions/workflows/ci.yml/badge.svg)](https://github.com/darisisuresh/quantum-safe-metadata-aqpo-evidence/actions/workflows/ci.yml)
-[![Pages](https://img.shields.io/badge/GitHub%20Pages-live-6f42c1)](https://darisisuresh.github.io/quantum-safe-metadata-aqpo-evidence/)
+[![Tests](https://github.com/darisisuresh/QuantaLake-AQPO/actions/workflows/ci.yml/badge.svg)](https://github.com/darisisuresh/QuantaLake-AQPO/actions/workflows/ci.yml)
+[![Pages](https://img.shields.io/badge/GitHub%20Pages-live-6f42c1)](https://darisisuresh.github.io/QuantaLake-AQPO/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0b7285.svg)](LICENSE)
 
-Privacy-preserving evidence for **AQPO — Agentic Query Planner and Optimizer**, a research architecture for studying post-quantum metadata overhead in open table layouts.
+**QuantaLake AQPO** is an Agentic Query Planner and Optimizer research project for studying post-quantum metadata overhead in open table layouts.
 
 ## Research boundary
 
@@ -24,7 +24,7 @@ AQPO metadata proxy
 REST catalog and object storage
 ```
 
-## Evidence included
+## Research artifacts
 
 - deterministic benchmark dataset covering 1×–16× metadata inflation;
 - standard-library Python validation of latency, metadata-read, and cache trends;
@@ -51,12 +51,12 @@ The manuscript, extracted prose, author email, local paths, and raw integrity re
 ## Citation
 
 ```bibtex
-@misc{darisi2026aqpoevidence,
+@misc{darisi2026quantalake,
   author       = {Suresh kumar Darisi},
-  title        = {AQPO Evidence: Quantum-Safe Metadata Optimization},
+  title        = {QuantaLake AQPO: Quantum-Safe Metadata Optimization},
   year         = {2026},
   howpublished = {GitHub repository},
-  url          = {https://github.com/darisisuresh/quantum-safe-metadata-aqpo-evidence}
+  url          = {https://github.com/darisisuresh/QuantaLake-AQPO}
 }
 ```
 
@@ -67,4 +67,3 @@ The manuscript, extracted prose, author email, local paths, and raw integrity re
 ## License
 
 MIT License. See [LICENSE](LICENSE).
-
