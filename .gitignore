@@ -1,0 +1,19 @@
+# Deny manuscript and private integrity artifacts by default
+*.docx
+*.pdf
+*.tex
+*.txt
+*.html
+!docs/*.html
+raw/
+private/
+extracted-text/
+reports/
+*AEGIS*
+*aegis*
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+

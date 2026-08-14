@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use the AQPO evidence artifacts, cite this repository."
+title: "AQPO Evidence: Quantum-Safe Metadata Optimization"
+type: software
+authors:
+  - family-names: "Darisi"
+    given-names: "Suresh kumar"
+year: 2026
+repository-code: "https://github.com/darisisuresh/quantum-safe-metadata-aqpo-evidence"
+url: "https://darisisuresh.github.io/quantum-safe-metadata-aqpo-evidence/"
+license: MIT
+

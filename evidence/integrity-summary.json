@@ -1,0 +1,27 @@
+{
+  "assessment_date": "2026-08-13",
+  "tool": "AEGIS Integrity",
+  "tool_version": "2.4.0",
+  "overall_risk": "LOW",
+  "ai_content": {
+    "status": "completed",
+    "score": 0.17,
+    "verdict": "HUMAN",
+    "interpretation": "probabilistic signal, not proof of authorship"
+  },
+  "citation_integrity": {
+    "status": "completed",
+    "references": 15,
+    "flagged_issues": 0
+  },
+  "external_plagiarism": {
+    "status": "unavailable",
+    "reason": "no independent comparison corpus loaded"
+  },
+  "self_plagiarism": {
+    "status": "unavailable",
+    "reason": "no verified prior-work files loaded"
+  },
+  "raw_report_published": false
+}
+

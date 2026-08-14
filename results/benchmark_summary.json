@@ -1,0 +1,20 @@
+{
+  "evidence_type": "analytical_model",
+  "production_measurement": false,
+  "latency_p95_ms": {
+    "baseline_classical": {"1": 185},
+    "baseline_pq": {"2": 246, "4": 338, "8": 521, "16": 864},
+    "aqpo_passive": {"2": 228, "4": 301, "8": 451, "16": 702},
+    "aqpo_agentic": {"2": 202, "4": 236, "8": 302, "16": 419}
+  },
+  "metadata_read_mb": {
+    "baseline_pq": {"2": 8.4, "4": 16.7, "8": 33.5, "16": 66.2},
+    "aqpo_passive": {"2": 7.9, "4": 15.4, "8": 29.2, "16": 54.1},
+    "aqpo_agentic": {"2": 5.1, "4": 8.4, "8": 14.7, "16": 23.8}
+  },
+  "cache": {
+    "aqpo_passive": {"hit_ratio": 0.62, "compaction_ratio": 0.10, "verification_avoided": 0.37},
+    "aqpo_agentic": {"hit_ratio": 0.88, "prefetch_precision": 0.81, "compaction_ratio": 0.46, "verification_avoided": 0.79}
+  }
+}
+
