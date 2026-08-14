@@ -1,4 +1,4 @@
-name: Evidence checks
+name: QuantaLake checks
 on:
   push:
   pull_request:
