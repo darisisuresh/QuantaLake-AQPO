@@ -8,7 +8,7 @@
 
 ## Research boundary
 
-AQPO models how expanding cryptographic envelopes may affect metadata-intensive planning paths in Apache Iceberg and Delta-style tables. The included values are analytical benchmark scenarios, not production measurements. They are intended to make the assumptions and trend calculations inspectable.
+AQPO models how expanding cryptographic envelopes may affect metadata-intensive planning paths in Apache Iceberg and Delta-style tables. The repository now includes a deterministic trace-replay prototype in addition to analytical scenarios. Neither is a production deployment or a measurement of a live Iceberg catalog.
 
 ```text
 Query engines
@@ -26,8 +26,11 @@ REST catalog and object storage
 
 ## Research artifacts
 
-- deterministic benchmark dataset covering 1×–16× metadata inflation;
-- standard-library Python validation of latency, metadata-read, and cache trends;
+- deterministic benchmark dataset covering 1×–16× analytical metadata inflation;
+- standard-library trace-replay prototype with 30 seeded regression runs;
+- an explicit, auditable recency-frequency predictor and fail-closed snapshot handling;
+- byte-exact ML-KEM-768 and ML-DSA-65 envelope accounting from NIST FIPS 203/204;
+- validation of latency, metadata-read, cache, and failure-handling trends;
 - unit tests for dataset integrity and bounded metrics;
 - sanitized AEGIS aggregate status and detector limitations;
 - privacy gate that rejects manuscripts, raw reports, local paths, private email, and unauthorized attribution.
@@ -40,9 +43,19 @@ python3 scripts/validate_evidence.py
 python3 scripts/privacy_check.py
 ```
 
+## Prototype configuration and results
+
+`recency-frequency-v1` ranks objects with `0.65 × exp(-age/12) + 0.35 × frequency/window` over a 64-request window. The trace generator uses 96 objects, a 12-object rotating hot set, 800 requests per run, snapshot churn every 100 requests, cache capacity 24, and prefetch budget 4. Across 30 fixed seeds, passive mean hit ratio was 0.706375 and predictor-assisted mean hit ratio was 0.728542. Mean prefetch precision was only 0.054240, a negative operational signal showing that the transparent baseline predictor is not deployment-ready. It blocked a mean 129.07 stale candidates per run.
+
+The selected byte-accounting profile is ML-KEM-768 plus ML-DSA-65: 1,184-byte KEM public key, 1,088-byte KEM ciphertext, 1,952-byte signature public key, and 3,309-byte signature. The prototype does not execute PQC primitives, so it makes no encryption, decapsulation, signing, or verification timing claim.
+
+## Failure and deployment boundary
+
+Regression coverage includes snapshot churn and stale-candidate rejection. A practical deployment must additionally provide read-only catalog identity, tenant-isolated encrypted cache, deterministic invalidation on snapshot/key/policy change, bypass on proxy failure, bounded prefetch bandwidth, observability, shadow/canary rollout, and rollback thresholds. Catalog outage, corrupt objects, parser mismatch, clock skew, and model drift remain integration-test requirements rather than completed production evidence.
+
 ## Integrity interpretation
 
-The local final scan reported LOW overall risk, a probabilistic AI-content signal of 0.17 classified as HUMAN, and no flagged citation mismatch. External plagiarism matching was unavailable because no independent comparison corpus was supplied. The raw report remains private because it contains manuscript-derived text.
+The 2026-09-01 final scan with AEGIS Integrity 3.0.0 at commit `f850aeb` reported LOW overall risk, a probabilistic AI-content signal of 0.12, IEEE guideline compliance, grammar quality 0.96, and no citation-integrity issue across 15 references. External plagiarism matching was unavailable because no independent comparison corpus was supplied. The raw report remains private because it contains manuscript-derived text.
 
 ## Privacy boundary
 

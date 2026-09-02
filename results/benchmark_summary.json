@@ -1,6 +1,12 @@
 {
   "evidence_type": "analytical_model",
+  "prototype_measurement": true,
   "production_measurement": false,
+  "pqc_profile": {
+    "name": "ML-KEM-768+ML-DSA-65",
+    "source": "NIST FIPS 203 and FIPS 204",
+    "scope": "byte-exact envelope accounting; cryptographic operations are not executed"
+  },
   "latency_p95_ms": {
     "baseline_classical": {"1": 185},
     "baseline_pq": {"2": 246, "4": 338, "8": 521, "16": 864},
@@ -15,6 +21,14 @@
   "cache": {
     "aqpo_passive": {"hit_ratio": 0.62, "compaction_ratio": 0.10, "verification_avoided": 0.37},
     "aqpo_agentic": {"hit_ratio": 0.88, "prefetch_precision": 0.81, "compaction_ratio": 0.46, "verification_avoided": 0.79}
+  },
+  "regression": {
+    "runs": 30,
+    "trace_requests_per_run": 800,
+    "predictor": "recency-frequency-v1",
+    "passive_hit_ratio": {"mean": 0.706375, "min": 0.6775, "max": 0.73},
+    "agentic_hit_ratio": {"mean": 0.728542, "min": 0.69875, "max": 0.755},
+    "prefetch_precision": {"mean": 0.05424, "min": 0.048927, "max": 0.063447},
+    "stale_candidates_blocked": {"mean": 129.066667, "min": 98, "max": 160}
   }
 }
-

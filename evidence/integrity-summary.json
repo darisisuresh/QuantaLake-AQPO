@@ -1,18 +1,28 @@
 {
-  "assessment_date": "2026-08-13",
+  "assessment_date": "2026-09-01",
   "tool": "AEGIS Integrity",
-  "tool_version": "2.4.0",
+  "tool_version": "3.0.0",
+  "tool_commit": "f850aebc3839fe796f2d2c0df484e63208b885e8",
   "overall_risk": "LOW",
   "ai_content": {
     "status": "completed",
-    "score": 0.17,
-    "verdict": "HUMAN",
+    "score": 0.12,
     "interpretation": "probabilistic signal, not proof of authorship"
   },
   "citation_integrity": {
     "status": "completed",
     "references": 15,
     "flagged_issues": 0
+  },
+  "grammar": {
+    "status": "completed",
+    "quality_score": 0.96,
+    "spelling_variant": "US"
+  },
+  "ieee_guidelines": {
+    "status": "completed",
+    "verdict": "COMPLIANT",
+    "items_needing_review": 0
   },
   "external_plagiarism": {
     "status": "unavailable",
@@ -22,6 +32,9 @@
     "status": "unavailable",
     "reason": "no verified prior-work files loaded"
   },
+  "watermark": {
+    "status": "disabled",
+    "reason": "experimental heuristic outside requested scope"
+  },
   "raw_report_published": false
 }
-
