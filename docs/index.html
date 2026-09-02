@@ -42,7 +42,7 @@
         <div role="listitem"><strong>15</strong><span>curated references</span></div>
         <div role="listitem"><strong>LOW</strong><span>final AEGIS risk</span></div>
         <div role="listitem"><strong>0</strong><span>flagged citations</span></div>
-        <div role="listitem"><strong>5</strong><span>artifact tests</span></div>
+        <div role="listitem"><strong>10</strong><span>artifact tests</span></div>
       </div>
       <p class="build-stamp"><span></span> Research checks and Pages deployment passing</p>
     </section>
@@ -64,13 +64,13 @@
       <h2>Inspectable assumptions, bounded claims</h2>
       <div class="cards">
         <article><span class="card-icon">◇</span><span class="tag">MODEL</span><h3>Analytical benchmark</h3><p>Deterministic scenarios cover metadata inflation from 1× through 16×. They are explicitly not production measurements.</p></article>
-        <article><span class="card-icon">✓</span><span class="tag">TEST</span><h3>Trend validation</h3><p>Automated checks validate latency ordering, metadata-read ordering, bounded ratios, and artifact labeling.</p></article>
+        <article><span class="card-icon">✓</span><span class="tag">EXECUTED</span><h3>Trace-replay regression</h3><p>Thirty fixed seeds increased mean hit ratio from 0.706375 to 0.728542, while 0.054240 precision exposed a deployment limitation.</p></article>
         <article><span class="card-icon">⌾</span><span class="tag">PRIVACY</span><h3>Deny-by-default gate</h3><p>Manuscripts, raw scans, local paths, private email, and unauthorized attribution fail publication.</p></article>
       </div>
       <div class="metric-panel">
         <div><span>Modeled 16× metadata read</span><strong>66.2 → 23.8 MB</strong><small>Baseline-PQ versus AQPO-Agentic</small></div>
         <div class="bar"><span style="--w:36%"></span></div>
-        <p>Illustrative model output. Production validation remains future work.</p>
+        <p>Illustrative analytical output. Executed trace replay is reported separately; production validation remains future work.</p>
       </div>
     </section>
 
@@ -79,11 +79,11 @@
       <h2>Transparent detector status</h2>
       <div class="integrity-grid">
         <div><span class="dot ok"></span><strong>Citation integrity</strong><em>Completed · 0 flagged issues</em></div>
-        <div><span class="dot ok"></span><strong>AI-content signal</strong><em>Completed · 0.17 · HUMAN</em></div>
+        <div><span class="dot ok"></span><strong>AI-content signal</strong><em>Completed · 0.14 · probabilistic</em></div>
         <div><span class="dot muted"></span><strong>External matching</strong><em>Unavailable · no corpus loaded</em></div>
         <div><span class="dot muted"></span><strong>Self-overlap</strong><em>Unavailable · no verified prior works</em></div>
       </div>
-      <p class="note">Detector outputs are probabilistic indicators, not proof of authorship or misconduct. Raw reports remain private because they contain manuscript-derived text.</p>
+      <p class="note">The 2026-09-02 scan reported LOW risk, 0% citation issues, grammar quality 0.99, and IEEE compliance. Detector outputs are probabilistic indicators, not proof of authorship or misconduct. Raw reports remain private because they contain manuscript-derived text.</p>
     </section>
 
     <section id="reproduce" class="section reproduce">

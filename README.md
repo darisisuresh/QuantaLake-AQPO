@@ -45,7 +45,9 @@ python3 scripts/privacy_check.py
 
 ## Prototype configuration and results
 
-`recency-frequency-v1` ranks objects with `0.65 × exp(-age/12) + 0.35 × frequency/window` over a 64-request window. The trace generator uses 96 objects, a 12-object rotating hot set, 800 requests per run, snapshot churn every 100 requests, cache capacity 24, and prefetch budget 4. Across 30 fixed seeds, passive mean hit ratio was 0.706375 and predictor-assisted mean hit ratio was 0.728542. Mean prefetch precision was only 0.054240, a negative operational signal showing that the transparent baseline predictor is not deployment-ready. It blocked a mean 129.07 stale candidates per run.
+`recency-frequency-v1` ranks objects with `0.65 × exp(-age/12) + 0.35 × frequency/window` over a 64-request window. The trace generator uses 96 objects, a 12-object rotating hot set, 800 requests per run, snapshot churn every 100 requests, cache capacity 24, and prefetch budget 4. Across 30 fixed seeds, passive mean hit ratio was 0.706375 (range 0.677500–0.730000) and predictor-assisted mean hit ratio was 0.728542 (range 0.698750–0.755000). The absolute increase was 0.022167, or 3.14% relative to the passive mean; this is a descriptive result, not a claim of statistical or production superiority.
+
+Mean prefetch precision was only 0.054240 (range 0.048927–0.063447), a negative operational signal showing that the transparent baseline predictor is not deployment-ready. Snapshot guards blocked a mean 129.07 stale candidates per run (range 98–160). These are executed trace-replay results. The latency, metadata-volume, and I/O-reduction scenarios remain analytical hypotheses rather than live-system measurements.
 
 The selected byte-accounting profile is ML-KEM-768 plus ML-DSA-65: 1,184-byte KEM public key, 1,088-byte KEM ciphertext, 1,952-byte signature public key, and 3,309-byte signature. The prototype does not execute PQC primitives, so it makes no encryption, decapsulation, signing, or verification timing claim.
 
@@ -55,7 +57,7 @@ Regression coverage includes snapshot churn and stale-candidate rejection. A pra
 
 ## Integrity interpretation
 
-The 2026-09-01 final scan with AEGIS Integrity 3.0.0 at commit `f850aeb` reported LOW overall risk, a probabilistic AI-content signal of 0.12, IEEE guideline compliance, grammar quality 0.96, and no citation-integrity issue across 15 references. External plagiarism matching was unavailable because no independent comparison corpus was supplied. The raw report remains private because it contains manuscript-derived text.
+The 2026-09-02 final scan with AEGIS Integrity 3.0.0 at commit `f850aeb` reported LOW overall risk, a probabilistic AI-content signal of 0.14, IEEE guideline compliance, grammar quality 0.99, and no citation-integrity issue across 15 references. The upstream AEGIS suite passed 192 tests, and this repository passed 10 tests. External plagiarism matching was unavailable because no independent comparison corpus was supplied. The watermark detector was disabled as outside scope. The raw report remains private because it contains manuscript-derived text.
 
 ## Privacy boundary
 

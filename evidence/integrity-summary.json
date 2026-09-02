@@ -1,12 +1,12 @@
 {
-  "assessment_date": "2026-09-01",
+  "assessment_date": "2026-09-02",
   "tool": "AEGIS Integrity",
   "tool_version": "3.0.0",
   "tool_commit": "f850aebc3839fe796f2d2c0df484e63208b885e8",
   "overall_risk": "LOW",
   "ai_content": {
     "status": "completed",
-    "score": 0.12,
+    "score": 0.14,
     "interpretation": "probabilistic signal, not proof of authorship"
   },
   "citation_integrity": {
@@ -16,7 +16,7 @@
   },
   "grammar": {
     "status": "completed",
-    "quality_score": 0.96,
+    "quality_score": 0.99,
     "spelling_variant": "US"
   },
   "ieee_guidelines": {
@@ -35,6 +35,14 @@
   "watermark": {
     "status": "disabled",
     "reason": "experimental heuristic outside requested scope"
+  },
+  "verification": {
+    "repository_tests_passed": 10,
+    "aegis_upstream_tests_passed": 192,
+    "manuscript_page_count": 8,
+    "abstract_double_hyphen_present": false,
+    "conclusion_word_count": 182,
+    "remaining_low_advisory": "PDF table-cell extraction was concatenated as one sentence"
   },
   "raw_report_published": false
 }
